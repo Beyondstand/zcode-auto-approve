@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "process",
+            "command": "C:\\Program Files\\nodejs\\node.exe",
+            "args": [
+              "${ZCODE_PLUGIN_ROOT}/hooks/auto-approve.mjs",
+              "PreToolUse"
+            ],
+            "timeoutMs": 3000,
+            "statusMessage": "自动授权"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "process",
+            "command": "C:\\Program Files\\nodejs\\node.exe",
+            "args": [
+              "${ZCODE_PLUGIN_ROOT}/hooks/auto-approve.mjs",
+              "PermissionRequest"
+            ],
+            "timeoutMs": 3000,
+            "statusMessage": "自动授权"
+          }
+        ]
+      }
+    ]
+  }
+}
