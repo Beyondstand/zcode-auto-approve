@@ -15,7 +15,7 @@ const BREAKER_STATE =
   path.join(os.homedir(), '.zcode', 'hooks', '.circuit-state.json');
 const WATCHED = new Set(['Edit', 'Write', 'Bash']); // 与 circuit-breaker.mjs 保持一致
 const MAX_IDENTICAL = 3; // 同输入重复超过此次数熔断器会 deny
-const ASK_AFTER = 15; // 单轮超过此次数熔断器会 ask
+const ASK_AFTER = 200; // 单轮超过此次数熔断器会 ask
 const STATE_TTL_MS = 10 * 60 * 1000;
 
 function readStdin() {

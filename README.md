@@ -12,7 +12,7 @@
 
 ## 安全设计（不是无脑全放行）
 
-1. **熔断器让位**：若 `~/.zcode/hooks/circuit-breaker.mjs` 已对本调用判定 `ask` / `deny`（同输入重复超过 3 次，或单轮 Edit/Write/Bash 超过 15 次），本插件**保持沉默、不抢决策**，熔断器的否决独立生效——防止 agent 失控循环刷爆账单
+1. **熔断器让位**：若 `~/.zcode/hooks/circuit-breaker.mjs` 已对本调用判定 `ask` / `deny`（同输入重复超过 3 次，或单轮 Edit/Write/Bash 超过 200 次会 ask、超过 800 次会 deny），本插件**保持沉默、不抢决策**，熔断器的否决独立生效——防止 agent 失控循环刷爆账单
 2. **错误即静默**：任何内部异常一律 `exit 0`，绝不阻塞正常工作流
 3. **随时可停**：Settings → Plugin Management 里禁用本插件即可，无需删文件
 

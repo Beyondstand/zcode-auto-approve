@@ -1,6 +1,6 @@
 {
   "name": "auto-approve",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Auto-approve all tool permission prompts via PreToolUse/PermissionRequest hooks. Respects the user's circuit-breaker hook.",
   "author": { "name": "Beyondstand" },
   "hooks": "./hooks/hooks.json"
